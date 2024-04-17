@@ -1,4 +1,5 @@
 package org.example;
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class TipCalculator {
@@ -17,9 +18,10 @@ public class TipCalculator {
 
     static void userInput() {
         double billAmount;
-        int tipAmount;
-        int peopleNum;
+        double tipAmount;
+        double peopleNum;
         Scanner input = new Scanner(System.in);
+        DecimalFormat format = new DecimalFormat("#.00");
 
         System.out.println("Enter Bill Amount: ");
         billAmount = input.nextDouble();
@@ -27,28 +29,29 @@ public class TipCalculator {
 
         System.out.println("5 \\n\" + \"10 \\n\" + \"15 \\n\" + \"20\\n\" + \"25 \\n\" + \"Custom\"");
         System.out.println("Enter tip %: ");
-        tipAmount = input.nextInt();
+        tipAmount = input.nextDouble();
 
 
         System.out.println("Enter number of people ");
-        peopleNum = input.nextInt();
+        peopleNum = input.nextDouble();
 
-        System.out.println("Tip Amount Per Person: " + tipPerPerson(billAmount, tipAmount, peopleNum));
-        System.out.println("Total Per Person: " + totalPerPerson(billAmount, tipPerPerson(billAmount, tipAmount, peopleNum), peopleNum));
+        System.out.println("Tip Amount Per Person: " + format.format(tipPerPerson(billAmount, tipAmount, peopleNum)));
+        System.out.println("Total Per Person: " + format.format(totalPerPerson(billAmount, tipPerPerson(billAmount, tipAmount, peopleNum), peopleNum)));
     }
 
-    static int tipPerPerson(double billAmount, int tipAmount, int peopleNum){
+    static double tipPerPerson(double billAmount, double tipAmount, double peopleNum){
 
-        int totalTip = (int) (billAmount * (tipAmount/100));
-        int tipPerPerson = totalTip / peopleNum;
+
+        double totalTip = billAmount * (tipAmount/100);
+        double tipPerPerson = totalTip / peopleNum;
 
         return tipPerPerson;
     }
 
-    static int totalPerPerson(double billAmount, int tipPerPerson, int peopleNum){
+    static double totalPerPerson(double billAmount, double tipPerPerson, double peopleNum){
 
-        int totalBillPerPerson = (int) (billAmount/peopleNum);
-        int total = totalBillPerPerson + tipPerPerson;
+        double totalBillPerPerson = billAmount/peopleNum;
+        double total = totalBillPerPerson + tipPerPerson;
 
         return total;
     }
