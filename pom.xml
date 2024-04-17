@@ -28,6 +28,9 @@
         </dependency>
 
     </dependencies>
+   <build>
+       <finalName>tip-calculator</finalName>
+   </build>
 
 
 </project>
