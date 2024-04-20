@@ -7,7 +7,7 @@ pipeline {
   stages {
     stage('Checkout Source') {
       steps {
-        git 'https://github.com/gcardenasdev/TipCalculator.git'
+        git 'https://github.com/gcardenasdev/TipCalculator'
       }
     }
     stage('Build image') {
