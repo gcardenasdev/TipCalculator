@@ -24,6 +24,7 @@ public class TipCalculator {
         DecimalFormat format = new DecimalFormat("#.00");
 
         System.out.println("Enter Bill Amount: ");
+
         billAmount = input.nextDouble();
 
 
