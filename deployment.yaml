@@ -14,5 +14,6 @@ spec:
       containers:
         - name: tip-calculator
           image: gcardenasdev/tip-calculator:latest
+          imagePullPolicy: Never
           ports:
             - containerPort: 3000
