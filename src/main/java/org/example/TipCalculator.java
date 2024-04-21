@@ -28,7 +28,7 @@ public class TipCalculator {
         billAmount = input.nextDouble();
 
 
-        System.out.println("5 \n\" + \"10 \n\" + \"15 \n\" + \"20 \n\" + \"25 \n\" + \"Custom\"");
+        System.out.println("5 " + "\n" + "10" + "\n" + "15" + "\n" + "20" + "\n" + "25" + "\n" + "Custom");
         System.out.println("Enter tip %: ");
         tipAmount = input.nextDouble();
 
